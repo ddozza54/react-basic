@@ -1,0 +1,41 @@
+.profile {
+    width: 300px;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    text-align: center;
+    background-color: #ebebeb;
+    border-radius: 1rem;
+    padding: 1rem;
+    -webkit-box-shadow: 5px 9px 11px -3px rgba(0, 0, 0, 0.41);
+    box-shadow: 5px 9px 11px -3px rgba(0, 0, 0, 0.41);
+    margin: 1rem;
+}
+
+.avatar {
+    position: relative;
+    width: 200px;
+    margin: auto;
+}
+
+.photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.newcomer {
+    background-color: aquamarine;
+    width: 50px;
+    height: 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 5px;
+    right: 8px;
+}
