@@ -5,7 +5,7 @@ export default function AppXY() {
     const [position, setPosition] = useState({ x: 0, y: 0 });
 
     const handleMouseMove = (e) => {
-        setPosition({ x: e.clientX, y: e.clientY })
+        setPosition(prev => ({ ...prev, x: e.clientX }))
     }
     return (
         <div className='container' onMouseMove={handleMouseMove}>
