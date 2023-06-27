@@ -46,8 +46,12 @@ export default function AppMentor(props) {
                 onClick={() => {
                     const add = prompt(`누구를 추가할까요?`);
                     const addTitle = prompt(`${add}의 title 은 무엇인가요?`)
-                    setPerson(person => ({ ...person, mentors: [...person.mentors, { name: add, title: addTitle, }] }));
+                    if (add === "" || addTitle === "") {
+                        setPerson(person)
+                    } else {
+                        setPerson(person => ({ ...person, mentors: [...person.mentors, { name: add, title: addTitle }] }))
+                    }
                 }}>멘토 추가하기</button>
-        </div>
+        </div >
     );
 }
