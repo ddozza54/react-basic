@@ -1,0 +1,5 @@
+/* 파일명 확장자 이전에 module 붙여주면 postCss 사용 가능 */
+
+.button {
+    background-color: plum;
+}

@@ -1,31 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import useProducts from '../hooks/use-products';
 
 export default function ProductsChallenge() {
-    //useState 에 값 할당하지 않으면 undefined 설정됨.  
-    const [error, setError] = useState();
-    const [isLoading, setIsLoading] = useState(false);
-
-    const [count, setCount] = useState(0);
-    const [products, setProducts] = useState([]);
-    const [checked, setChecked] = useState(true);
+    const [checked, setChecked] = useState(false);
+    const [isLoading, products, error] = useProducts({ salesOnly: checked })
 
     const handleChange = () => setChecked(prev => !prev)
-    useEffect(() => {
-        setError()
-        setIsLoading(true)
-        fetch(`data/${checked ? "sale_" : ""}products.json`)
-            .then(res => res.json())
-            .then(data => {
-                console.log('🔥')
-                setProducts(data)
-            }).catch((e) => {
-                setError("에러가 발생했습니다.")
-                console.log(e);
-            }).finally(() => {
-                setIsLoading(false)
-            });
-        return () => { console.log("🧹") }
-    }, [checked])
+
     //checked 라는 값이 변할 때마다 새로 렌더링 해줘
 
 
@@ -45,7 +26,6 @@ export default function ProductsChallenge() {
                     </li>
                 ))}
             </ul>)}
-            <button onClick={() => setCount(prev => prev + 1)}>{count}</button>
         </>
     );
 }
